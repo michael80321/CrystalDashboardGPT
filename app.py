@@ -19,23 +19,23 @@ class NewsTopic:
 
 
 TW_TOP20_DEFAULT = [
-    "友商01（請替換）", "友商02（請替換）", "友商03（請替換）", "友商04（請替換）", "友商05（請替換）",
-    "友商06（請替換）", "友商07（請替換）", "友商08（請替換）", "友商09（請替換）", "友商10（請替換）",
-    "友商11（請替換）", "友商12（請替換）", "友商13（請替換）", "友商14（請替換）", "友商15（請替換）",
-    "友商16（請替換）", "友商17（請替換）", "友商18（請替換）", "友商19（請替換）", "友商20（請替換）",
+    "MISA米薩小姐能量美學", "Crystal de mode", "心流礦石 Flow Mineral", "好礦 HAO-MINERAL", "礦石先生 Mr. Mineral",
+    "沐光水晶", "礦癮 Mineral Addict", "星辰礦石", "初心晶礦", "月光礦石 Moon Crystal",
+    "朵朵礦石", "能量礦石研究室", "礦石手作所", "紫晶洞選品", "晶礦日常",
+    "礦石療癒室", "光之水晶", "小宇宙礦石", "礦物生活館", "晶礦選物店",
 ]
 
 DEFAULT_COMPETITOR_CSV = """competitor,ig_account,website
-友商01（請替換）,https://www.instagram.com/example_1,https://example.com
-友商02（請替換）,https://www.instagram.com/example_2,https://example.org
-友商03（請替換）,https://www.instagram.com/example_3,https://example.net
+MISA米薩小姐能量美學,https://www.instagram.com/example_1,https://example.com
+Crystal de mode,https://www.instagram.com/example_2,https://example.org
+心流礦石 Flow Mineral,https://www.instagram.com/example_3,https://example.net
 """
 
 DEFAULT_POST_CSV = """date,competitor,platform,post_text,product,likes,comments,shares,clicks
-2026-03-30,友商01（請替換）,IG,新品白水晶手鍊限時優惠,白水晶手鍊,460,92,38,1280
-2026-03-30,友商02（請替換）,IG,紫水晶洞開箱直播,紫水晶洞,520,140,60,1750
-2026-03-31,友商03（請替換）,官網,月光石項鍊新品上架,月光石項鍊,300,24,20,2100
-2026-04-01,友商01（請替換）,IG,招財黃水晶居家擺件推薦,黃水晶擺件,640,188,90,2420
+2026-03-30,MISA米薩小姐能量美學,IG,新品白水晶手鍊限時優惠,白水晶手鍊,460,92,38,1280
+2026-03-30,Crystal de mode,IG,紫水晶洞開箱直播,紫水晶洞,520,140,60,1750
+2026-03-31,心流礦石 Flow Mineral,官網,月光石項鍊新品上架,月光石項鍊,300,24,20,2100
+2026-04-01,MISA米薩小姐能量美學,IG,招財黃水晶居家擺件推薦,黃水晶擺件,640,188,90,2420
 """
 
 
@@ -120,7 +120,7 @@ with st.sidebar:
     keywords_cn = st.text_input("大陸關鍵字", value="大陆 水晶 行业 OR 水晶 电商")
     keywords_hk = st.text_input("香港關鍵字", value="香港 水晶 市場")
     st.markdown("---")
-    st.write("台灣頭部 20 友商（可編輯）")
+    st.write("台灣頭部 20 友商（預設名單，可編輯）")
     competitors_text = st.text_area("每行一個名稱", value="\n".join(TW_TOP20_DEFAULT), height=260)
 
 competitor_names = [x.strip() for x in competitors_text.splitlines() if x.strip()]
