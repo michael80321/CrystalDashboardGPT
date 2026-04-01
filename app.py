@@ -162,6 +162,22 @@ with col2:
     comp_df = load_csv(comp_file, DEFAULT_COMPETITOR_CSV)
     st.dataframe(comp_df, use_container_width=True, height=220)
 
+    st.markdown("**點選後直接跳轉：友商官網 / IG**")
+    if not comp_df.empty and {"competitor", "ig_account", "website"}.issubset(comp_df.columns):
+        for row in comp_df.itertuples(index=False):
+            name = getattr(row, "competitor", "(未命名友商)")
+            ig = getattr(row, "ig_account", "")
+            web = getattr(row, "website", "")
+            links = []
+            if isinstance(web, str) and web.strip():
+                links.append(f"[官網]({web.strip()})")
+            if isinstance(ig, str) and ig.strip():
+                links.append(f"[Instagram]({ig.strip()})")
+            if links:
+                st.markdown(f"- **{name}**：" + "｜".join(links))
+            else:
+                st.markdown(f"- **{name}**：尚未提供連結")
+
     if st.button("抓取官網首頁標題（快速偵測是否有新活動頁）"):
         titles = []
         for row in comp_df.itertuples(index=False):
