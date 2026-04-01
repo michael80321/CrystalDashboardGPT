@@ -66,3 +66,5 @@ date,competitor,platform,post_text,product,likes,comments,shares,clicks
 ## 注意
 
 預設友商名稱與示範數據僅供展示流程，請替換成你的真實監控名單與每日匯出資料。
+
+
